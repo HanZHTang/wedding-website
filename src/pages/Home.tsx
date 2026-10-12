@@ -14,6 +14,7 @@ export default function Home() {
   return (
     <main className="bg-[#eae4cc]">
       {!opened && <EnvelopeIntro onOpen={() => setOpened(true)} />}
+      <MusicBar autoStart={opened} />
       <div
         className={`transition-opacity duration-700 ${
           opened ? 'opacity-100' : 'opacity-0 h-[100svh] overflow-hidden'
@@ -21,7 +22,6 @@ export default function Home() {
         aria-hidden={!opened}
       >
         <Hero />
-        <MusicBar />
         <Story />
         <Promise />
         <Events />
